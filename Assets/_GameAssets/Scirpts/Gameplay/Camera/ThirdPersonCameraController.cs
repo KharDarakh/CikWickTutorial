@@ -16,15 +16,20 @@ public class ThirdPersonCameraController : MonoBehaviour
 
         _orientationTransform.forward = viewDirection.normalized;
 
+        Debug.DrawLine(_orientationTransform.position, _orientationTransform.position + _orientationTransform.forward * 2f, Color.red);
+
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
         Vector3 inputDirection = _orientationTransform.forward * verticalInput + _orientationTransform.right * horizontalInput;
 
-        if(inputDirection != Vector3.zero)
+        Debug.DrawLine(_playerVisualTransform.position, _playerVisualTransform.position + _playerVisualTransform.forward * 2f, Color.yellow);
+
+        if (inputDirection != Vector3.zero)
         {
             _playerVisualTransform.forward = Vector3.Slerp(_playerVisualTransform.forward, inputDirection.normalized, Time.deltaTime * _rotationSpeed);
+            
+            Debug.DrawLine(_playerTransform.position, _playerTransform.position + inputDirection.normalized * 2f, Color.cyan);
         }
-
     }
 }
