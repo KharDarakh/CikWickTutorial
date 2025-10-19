@@ -78,21 +78,21 @@ public class PlayerStateUI : MonoBehaviour
         _playerWalkingImage.sprite = playerWalkingSprite;
         _playerSlidingImage.sprite = playerSlidingSprite;
 
-        activeTransform.DOAnchorPosX(-25f, _moveDuration).SetEase(_moveEase);
-        passiveTransform.DOAnchorPosX(-90f, _moveDuration).SetEase(_moveEase);
+        activeTransform.DOAnchorPosX(-25f, _moveDuration).SetEase(_moveEase).SetId("ActiveStateAnim");
+        passiveTransform.DOAnchorPosX(-90f, _moveDuration).SetEase(_moveEase).SetId("OnPassiveStateAnim");
     }
 
     private IEnumerator SetBoosterUserInterfaces(RectTransform activeTransform, Image boosterImage, Image wheatImage, Sprite activeSprite, Sprite passiveSprite, Sprite activeWheatSprite, Sprite passiveWheatSprite, float duration)
     {
         boosterImage.sprite = activeSprite;
         wheatImage.sprite = activeWheatSprite;
-        activeTransform.DOAnchorPosX(25f, _moveDuration).SetEase(_moveEase);
+        activeTransform.DOAnchorPosX(25f, _moveDuration).SetEase(_moveEase).SetId("BoosterActiveAnim");
 
         yield return new WaitForSeconds(duration);
 
         boosterImage.sprite = passiveSprite;
         wheatImage.sprite = passiveWheatSprite;
-        activeTransform.DOAnchorPosX(90f, _moveDuration).SetEase(_moveEase);
+        activeTransform.DOAnchorPosX(90f, _moveDuration).SetEase(_moveEase).SetId("BoosterPassiveAnim");
     }
 
     public void PlayBoosterUIAnimations(RectTransform activeTransform, Image boosterImage, Image wheatImage, Sprite activeSprite, Sprite passiveSprite, Sprite activeWheatSprite, Sprite passiveWheatSprite, float duration)

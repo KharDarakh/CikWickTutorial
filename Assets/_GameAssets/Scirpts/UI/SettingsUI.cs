@@ -34,15 +34,15 @@ public class SettingsUI : MonoBehaviour
         _blackBackgroundObject.SetActive(true);
         _settingsPopupObject.SetActive(true);
 
-        _blackBackgroundImage.DOFade(0.8f, _animationDuration).SetEase(Ease.Linear);
-        _settingsPopupObject.transform.DOScale(1.5f, _animationDuration).SetEase(Ease.OutBack);
+        _blackBackgroundImage.DOFade(0.8f, _animationDuration).SetEase(Ease.Linear).SetId("SettingsButtonBlackBGFade");
+        _settingsPopupObject.transform.DOScale(1.5f, _animationDuration).SetEase(Ease.OutBack).SetId("SettingsScale");
 
     }
 
     private void OnResumeButtonClicked()
     {
         _blackBackgroundImage.DOFade(0f, _animationDuration).SetEase(Ease.Linear);
-        _settingsPopupObject.transform.DOScale(0f, _animationDuration).SetEase(Ease.OutExpo).OnComplete(() =>
+        _settingsPopupObject.transform.DOScale(0f, _animationDuration).SetEase(Ease.OutExpo).SetId("ResumeButtonClicked").OnComplete(() =>
         {
             GameManager.Instance.ChangeGameState(GameState.Resume);
             _blackBackgroundObject.SetActive(false);

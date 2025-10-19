@@ -60,7 +60,7 @@ public class PlayerHealthUI : MonoBehaviour
 
     private void AnimateDamageSprite(Image activeImage, RectTransform activeImageTransform)
     {
-        activeImageTransform.DOScale(0f, _scaleDuration).SetEase(Ease.InBack).OnComplete(() =>
+        activeImageTransform.DOScale(0f, _scaleDuration).SetEase(Ease.InBack).SetId("OnDamageHealthAnim").OnComplete(() =>
         {
             activeImage.sprite = _playerUnhealthySprite;
             activeImageTransform.DOScale(1f, _scaleDuration).SetEase(Ease.OutBack);
