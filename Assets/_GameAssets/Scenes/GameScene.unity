@@ -815,6 +815,7 @@ MonoBehaviour:
   _eggCounterUI: {fileID: 364182245}
   _winLoseUI: {fileID: 2144823279}
   _maxEggCount: 5
+  _delay: 0.5
 --- !u!4 &93123485
 Transform:
   m_ObjectHideFlags: 0
@@ -956,7 +957,7 @@ GameObject:
   - component: {fileID: 139528806}
   - component: {fileID: 139528801}
   - component: {fileID: 139528800}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1046,7 +1047,7 @@ MonoBehaviour:
   _movementKey: 101
   _movementSpeed: 30
   _jumpKey: 32
-  _jumpForce: 8
+  _jumpForce: 10
   _jumpCoolDown: 0.5
   _airMultiplier: 0.2
   _airDrag: 0.75
@@ -1096,6 +1097,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d44af1415b3eb3448b2047a18264193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerVisualTransform: {fileID: 1418029471419873454}
 --- !u!4 &164804496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2230062934126646105, guid: 55971753bae34414588489ee38426478, type: 3}
@@ -1464,6 +1466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e38886fa731ab954681a3307b7afe9c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerHealthUI: {fileID: 1454556684}
   _maxHealth: 3
 --- !u!4 &267906851
 Transform:
@@ -8444,7 +8447,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2100000, guid: 253fb6b384c92444d9c581930abd0790, type: 2}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 1983267091251499890, guid: 69ef6ec9a0720ab4181a382ad028a657, type: 3}
+    - {fileID: -967373435552589514, guid: 69ef6ec9a0720ab4181a382ad028a657, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ef6ec9a0720ab4181a382ad028a657, type: 3}
@@ -8537,7 +8542,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 166168802844963887, guid: 188993776ab74014b956f832ea43a5d8, type: 3}
       propertyPath: m_Name
-      value: HolyWheart
+      value: HolyWheat
       objectReference: {fileID: 0}
     - target: {fileID: 166168802844963887, guid: 188993776ab74014b956f832ea43a5d8, type: 3}
       propertyPath: m_IsActive
