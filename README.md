@@ -1,1 +1,3 @@
 # CikWickTutorial
+
+Bitti olum!
